@@ -36,4 +36,8 @@ public class Cine {
             System.out.print("\n");
         }
     }
+
+    Cine(){
+
+    }
 }
