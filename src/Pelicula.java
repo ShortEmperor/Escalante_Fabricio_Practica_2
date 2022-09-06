@@ -3,7 +3,7 @@ import java.sql.Time;
 public class Pelicula {
     private String titulo;
     private String director;
-    private Time duracion;
+    private double duracion;
     private int minEdad;
 
     // Setters and getters
@@ -21,10 +21,10 @@ public class Pelicula {
         return this.director;
     }
 
-    void setDuracion(Time duracion){
+    void setDuracion(double duracion){
         this.duracion = duracion;
     }
-    Time getDuracion(){
+    double getDuracion(){
         return this.duracion;
     }
 
@@ -33,6 +33,13 @@ public class Pelicula {
     }
     int getMinEdad(){
         return this.minEdad;
+    }
+
+    Pelicula(){
+        this.director = "John Lasseter";
+        this.titulo = "Toy Story";
+        this.duracion = 1.21;
+        this.minEdad = 4;
     }
 
 }

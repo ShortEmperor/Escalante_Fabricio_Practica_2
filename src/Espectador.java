@@ -25,5 +25,11 @@ public class Espectador {
         return this.dinero;
     }
 
+    Espectador(){
+        this.nombre = "Juan Perez";
+        this.edad = (int) (Math.random()*90) + 3;
+        this.dinero = (double) (Math.random()*3000);
+    }
+
 
 }

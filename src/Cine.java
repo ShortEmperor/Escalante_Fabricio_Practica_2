@@ -19,7 +19,7 @@ public class Cine {
     }
     static public String[][] sala = new String[8][9];
 
-    public static void hacerSala(){
+    public static void makeSala(){
         for (int i = 0; i < letters.length; i++){
             for (int j = 0; j < numbers.length; j++){
                 sala[j][i] = letters[i] + numbers[j];
@@ -28,7 +28,7 @@ public class Cine {
     }
 
     public static void printSala(){
-        System.out.println("       PANTALLA      ");
+        System.out.println("       ~PANTALLA~      ");
         for (int i = 0; i < 9; i++){
             for (int j = 0; j < 8; j++){
                 System.out.print(sala[j][i] + " ");
