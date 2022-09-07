@@ -42,4 +42,11 @@ public class Pelicula {
         this.minEdad = 4;
     }
 
+    Pelicula(String director, String titulo, double duracion, int minEdad){
+        this.director = director;
+        this.titulo = titulo;
+        this.duracion = duracion;
+        this.minEdad = minEdad;
+    }
+
 }

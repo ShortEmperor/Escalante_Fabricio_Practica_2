@@ -8,8 +8,6 @@ public class Cine {
 
     // Atributos
 
-
-    static private Pelicula peli = new Pelicula();
     static private double precio;
 
     private Espectador especta = new Espectador();
@@ -45,18 +43,28 @@ public class Cine {
         }
     }
 
-    public static void sentarEspectador(Espectador espectador){
+    public void sentarEspectador(Espectador espectador, Pelicula pelicula){
         String asiento = new String();
-        if (espectador.getDinero() > precio & espectador.getEdad() > peli.getMinEdad() ){
-            asiento = sala[(int)(Math.random()*9)][(int)(Math.random()*8)];
+        if (espectador.getDinero() > precio & espectador.getEdad() > pelicula.getMinEdad() ){
+            asiento = sala[(int)(Math.random()*8)][(int)(Math.random()*7)];
             if (!ocupados.contains(asiento)){
                 espectador.setAsignado(asiento);
+                ocupados.add(asiento);
+                System.out.println("Sentado en el asiento: " + asiento + "\n");
             }else{
-                System.out.println("Ese asiento ya esta ocupado!");
+                System.out.println("Ese asiento ya esta ocupado!\n");
             }
         }else{
-            System.out.println("No tienes el suficiente dinero (POBRE!!!!) o eres demasiado joven!");
+            System.out.println("No tienes el suficiente dinero (POBRE!!!!) o eres demasiado joven!\n");
         }
+    }
+
+    static public void printOcupados(){
+        System.out.println("Asientos ocupados : " + ocupados.toString());
+    }
+
+    public String getOcupados(){
+        return ocupados.toString();
     }
 
 }

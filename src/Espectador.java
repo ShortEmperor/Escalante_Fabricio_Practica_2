@@ -1,4 +1,17 @@
 public class Espectador {
+
+    static private String[] NAMES =
+            {"Adel",
+            "Adonis",
+            "Ajaz",
+            "Cesc",
+            "Cirino",
+            "Cruz",
+            "Danilo",
+            "Dareck",
+            "Dariel",
+            "Darin",
+            "Fausto"};
     private String nombre;
     private int edad;
     private double dinero;
@@ -34,9 +47,9 @@ public class Espectador {
     }
 
     Espectador(){
-        this.nombre = "Juan Perez";
+        this.nombre = NAMES[(int)(Math.random()* NAMES.length)];
         this.edad = (int) (Math.random()*90) + 3;
-        this.dinero = (double) (Math.random()*3000);
+        this.dinero = (Math.random()*3000);
     }
 
 
