@@ -1,15 +1,18 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Cine {
     static private String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I"};
     static private String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8"};
-    private String[] ocupados = new String[10];
+
+    static private ArrayList<String> ocupados = new ArrayList<String>();
 
     // Atributos
 
 
-    private Pelicula[] pelicula = new Pelicula[10];
-    private double precio;
+    static private Pelicula peli = new Pelicula();
+    static private double precio;
+
+    private Espectador especta = new Espectador();
 
     void setPrecio(double precio){
         this.precio = precio;
@@ -18,6 +21,11 @@ public class Cine {
         return this.precio;
     }
     static public String[][] sala = new String[8][9];
+
+    Cine(){
+        precio = 60;
+
+    }
 
     public static void makeSala(){
         for (int i = 0; i < letters.length; i++){
@@ -37,7 +45,18 @@ public class Cine {
         }
     }
 
-    Cine(){
-
+    public static void sentarEspectador(Espectador espectador){
+        String asiento = new String();
+        if (espectador.getDinero() > precio & espectador.getEdad() > peli.getMinEdad() ){
+            asiento = sala[(int)(Math.random()*9)][(int)(Math.random()*8)];
+            if (!ocupados.contains(asiento)){
+                espectador.setAsignado(asiento);
+            }else{
+                System.out.println("Ese asiento ya esta ocupado!");
+            }
+        }else{
+            System.out.println("No tienes el suficiente dinero (POBRE!!!!) o eres demasiado joven!");
+        }
     }
+
 }
