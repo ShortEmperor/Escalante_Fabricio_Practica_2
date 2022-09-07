@@ -3,6 +3,8 @@ public class Espectador {
     private int edad;
     private double dinero;
 
+    private String asignado;
+
     // Setters and getters
     void setNombre(String nombre){
         this.nombre = nombre;
@@ -23,6 +25,12 @@ public class Espectador {
     }
     double getDinero(){
         return this.dinero;
+    }
+    void setAsignado(String asignado){
+        this.asignado = asignado;
+    }
+    String getAsignado(){
+        return this.asignado;
     }
 
     Espectador(){
